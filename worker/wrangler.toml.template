@@ -1,4 +1,4 @@
-name = "cloudflare_temp_email"
+name = "cloudflare-temp-email"
 main = "src/worker.ts"
 compatibility_date = "2024-09-23"
 compatibility_flags = [ "nodejs_compat" ]
@@ -75,10 +75,10 @@ ENABLE_AUTO_REPLY = false
 # Enable check junk mail
 # ENABLE_CHECK_JUNK_MAIL = false
 
-[[d1_databases]]
-binding = "DB"
-database_name = "xxx"
-database_id = "xxx"
+#[[d1_databases]]
+#binding = "DB"
+#database_name = "xxx"
+#database_id = "xxx"
 
 # kv config for send email verification code
 # [[kv_namespaces]]
