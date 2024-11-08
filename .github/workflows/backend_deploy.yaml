@@ -40,5 +40,9 @@ jobs:
           fi
           echo "Deployed for tag ${{ github.ref_name }}"
         env:
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          #CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          #CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_API_TOKEN: "iuSuGjPW41MP52ZpxlyY6ABSSbWbAGvIfuhTP91K"
+          #${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: "e0e0323ad86f07e674d7e74991733f0e"
+          #${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
