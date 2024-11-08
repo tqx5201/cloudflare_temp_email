@@ -32,32 +32,14 @@ jobs:
       - name: Deploy Frontend for ${{ github.ref_name }}
         run: |
           cd frontend/
-          echo "${{ secrets.FRONTEND_ENV }}" > .env.prod
-          export project_name=${{ secrets.FRONTEND_NAME }}
+          #echo "${{ secrets.FRONTEND_ENV }}" > .env.prod
+          cp .env.example .env.prod
+          #export project_name=${{ secrets.FRONTEND_NAME }}
+          export project_name= temp_email_pages
           pnpm install --no-frozen-lockfile
-          export frontend_branch=${{ secrets.FRONTEND_BRANCH }}
-          if [ -n "$frontend_branch" ]; then
-            echo "Deploying branch $frontend_branch"
-            pnpm run deploy:actions --project-name=$project_name
-          else
-            echo "Deploying branch prodcution"
-            pnpm run deploy --project-name=$project_name
-          fi
-          echo "Deploying prodcution for ${{ github.ref_name }}"
-          echo "Deployed for tag ${{ github.ref_name }}"
-
-          export tg_mini_app_project_name=${{ secrets.TG_FRONTEND_NAME }}
-          if [ -n "$tg_mini_app_project_name" ]; then
-            echo "Deploying telegram mini app $tg_mini_app_project_name"
-            if [ -n "$frontend_branch" ]; then
-              echo "Deploying telegram mini app branch $frontend_branch"
-              pnpm run deploy:actions:telegram --project-name=$tg_mini_app_project_name
-            else
-              echo "Deploying telegram mini app branch prodcution"
-              pnpm run deploy:telegram --project-name=$tg_mini_app_project_name
-            fi
-            echo "Deployed telegram mini app for ${{ github.ref_name }}"
-          fi
+          
         env:
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          #CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          #CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_API_TOKEN: "iuSuGjPW41MP52ZpxlyY6ABSSbWbAGvIfuhTP91K"
+          CLOUDFLARE_ACCOUNT_ID: "e0e0323ad86f07e674d7e74991733f0e"
